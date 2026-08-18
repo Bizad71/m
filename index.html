@@ -11,215 +11,267 @@
 
 <body>
 
-    <!-- پس‌زمینه -->
-    <div class="stars"></div>
+<div class="stars"></div>
 
-    <!-- موسیقی -->
-    <audio id="music" loop>
-        <!-- بعداً فایل آهنگ خودت را اینجا قرار بده -->
-        <!-- <source src="music.mp3" type="audio/mpeg"> -->
-    </audio>
+<!-- ==================== HERO ==================== -->
 
-    <!-- صفحه اول -->
-    <section id="hero" class="screen">
+<section id="hero" class="screen">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="small-text">
-                یک چیزی برای تو ساخته‌ام...
-            </div>
-
-            <h1>MAHI</h1>
-
-            <div class="heart">♥</div>
-
-            <p>
-                این سایت فقط برای یک نفر ساخته شده...
-            </p>
-
-            <button id="startBtn">
-                شروع کن
-            </button>
-
+        <div class="small-text">
+            یک چیزی برای تو ساخته‌ام...
         </div>
 
-    </section>
+        <h1>MAHI</h1>
 
+        <div class="heart">♥</div>
 
-    <!-- بخش داستان -->
-    <section id="story" class="section hidden">
-
-        <span class="section-label">OUR STORY</span>
-
-        <h2>داستان ما</h2>
-
-        <p class="intro">
-            بعضی آدم‌ها فقط وارد زندگی آدم نمی‌شوند...
-            <br>
-            بعضی‌ها تبدیل به بخشی از زندگی آدم می‌شوند.
+        <p>
+            این سایت فقط برای یک نفر ساخته شده...
         </p>
 
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="memory">
-
-                    <span>اولین روز</span>
-
-                    <h3>از اینجا شروع شد...</h3>
-
-                    <p>
-                        شاید آن روز نمی‌دانستم قرار است
-                        چه اتفاق زیبایی در زندگی‌ام شروع شود.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="memory">
-
-                    <span>یک خاطره</span>
-
-                    <h3>خاطراتی که ماندند</h3>
-
-                    <p>
-                        از بین تمام روزهایی که گذشت،
-                        بعضی لحظه‌ها هیچ‌وقت فراموش نمی‌شوند.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="memory">
-
-                    <span>امروز</span>
-
-                    <h3>و هنوز...</h3>
-
-                    <p>
-                        هنوز وقتی به تو فکر می‌کنم،
-                        همان حس روزهای اول را دارم.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <button class="next-btn" onclick="showLetter()">
-            یک چیز دیگر هم هست...
+        <button id="startBtn">
+            شروع کن
         </button>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- نامه -->
-    <section id="letter" class="section hidden">
+<!-- ==================== STORY ==================== -->
 
-        <span class="section-label">A LETTER FOR YOU</span>
+<section id="story" class="section hidden">
 
-        <h2>یک نامه برای تو</h2>
+    <span class="section-label">OUR STORY</span>
 
-        <div class="envelope" id="envelope">
+    <h2>داستان ما</h2>
 
-            <div class="envelope-back"></div>
+    <p class="intro">
+        بعضی آدم‌ها فقط وارد زندگی آدم نمی‌شوند...
+        <br>
+        بعضی‌ها تبدیل به بخشی از زندگی آدم می‌شوند.
+    </p>
 
-            <div class="letter-paper">
 
-                <h3>محدثه...</h3>
+    <div class="timeline">
 
-                <p id="letterText"></p>
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="memory">
+
+                <span>اولین روز</span>
+
+                <h3>از اینجا شروع شد...</h3>
+
+                <p>
+                    شاید آن روز نمی‌دانستم قرار است
+                    چه اتفاق زیبایی در زندگی‌ام شروع شود.
+                </p>
 
             </div>
-
-            <div class="envelope-front"></div>
 
         </div>
 
 
-        <button class="next-btn hidden" id="surpriseBtn">
-            هنوز تموم نشده...
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="memory">
+
+                <span>یک خاطره</span>
+
+                <h3>خاطراتی که ماندند</h3>
+
+                <p>
+                    از بین تمام روزهایی که گذشت،
+                    بعضی لحظه‌ها هیچ‌وقت فراموش نمی‌شوند.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="memory">
+
+                <span>امروز</span>
+
+                <h3>و هنوز...</h3>
+
+                <p>
+                    هنوز وقتی به تو فکر می‌کنم،
+                    همان حس روزهای اول را دارم.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="next-btn" id="storyNext">
+        یک نامه برای تو دارم...
+    </button>
+
+</section>
+
+
+<!-- ==================== LETTER ==================== -->
+
+<section id="letter" class="section hidden">
+
+    <span class="section-label">A LETTER FOR YOU</span>
+
+    <h2>یک نامه برای تو</h2>
+
+    <p class="letter-hint">
+        روی پاکت بزن...
+    </p>
+
+
+    <div class="envelope" id="envelope">
+
+        <div class="envelope-back"></div>
+
+        <div class="letter-paper">
+
+            <h3>محدثه...</h3>
+
+            <p id="letterText"></p>
+
+        </div>
+
+        <div class="envelope-front"></div>
+
+    </div>
+
+
+    <div id="letterNextArea" class="next-area hidden">
+
+        <p>
+            نامه تموم شد...
+            <br>
+            ولی برای رسیدن به قسمت بعد باید یک مرحله رو رد کنی.
+        </p>
+
+        <button class="next-btn" id="puzzleStart">
+            مرحله بعد
         </button>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- سورپرایز -->
-    <section id="surprise" class="section hidden">
+<!-- ==================== PUZZLE ==================== -->
 
-        <div class="surprise-container">
+<section id="puzzle" class="section hidden">
 
-            <div class="gift" id="gift">
+    <span class="section-label">ONE LITTLE GAME</span>
 
-                <div class="gift-lid"></div>
+    <h2>یک پازل برای تو</h2>
 
-                <div class="gift-box"></div>
+    <p class="puzzle-description">
+        قطعات را جابه‌جا کن و تصویر را کامل کن.
+        <br>
+        وقتی درستش کردی، راز بعدی باز می‌شود...
+    </p>
 
-                <div class="ribbon"></div>
 
-            </div>
+    <div class="puzzle-wrapper">
+
+        <div id="puzzleBoard" class="puzzle-board"></div>
+
+    </div>
 
 
-            <p class="gift-text">
-                اینو برای تو نگه داشته بودم...
-            </p>
+    <p id="puzzleStatus" class="puzzle-status">
+        هنوز کامل نشده...
+    </p>
 
-            <button id="openGift">
-                بازش کن 🎁
-            </button>
+
+    <button id="puzzleNext" class="next-btn hidden">
+        راز بعدی 🎁
+    </button>
+
+</section>
+
+
+<!-- ==================== GIFT ==================== -->
+
+<section id="surprise" class="section hidden">
+
+    <div class="surprise-container">
+
+        <span class="section-label">THE LAST SECRET</span>
+
+        <h2>این یکی برای توئه...</h2>
+
+        <div class="gift" id="gift">
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-box"></div>
+
+            <div class="ribbon"></div>
 
         </div>
 
-    </section>
+        <p class="gift-text">
+            خیلی چیزها توی این جعبه نیست...
+            <br>
+            فقط یک حرف مهمه.
+        </p>
+
+        <button id="openGift">
+            بازش کن 🎁
+        </button>
+
+    </div>
+
+</section>
 
 
-    <!-- پایان -->
-    <section id="final" class="section hidden">
+<!-- ==================== FINAL ==================== -->
 
-        <div class="final-content">
+<section id="final" class="section hidden">
 
-            <div class="final-heart">
-                ♥
-            </div>
+    <div class="final-content">
 
-            <h1>MAHI</h1>
-
-            <h2>
-                تو قشنگ‌ترین قسمت زندگی منی.
-            </h2>
-
-            <p>
-                و این داستان هنوز ادامه دارد...
-            </p>
-
-            <div class="forever">
-                ∞
-            </div>
-
+        <div class="final-heart">
+            ♥
         </div>
 
-    </section>
+        <h1>MAHI</h1>
+
+        <h2>
+            تو قشنگ‌ترین قسمت زندگی منی.
+        </h2>
+
+        <p>
+            و این داستان هنوز ادامه دارد...
+        </p>
+
+        <div class="forever">
+            ∞
+        </div>
+
+    </div>
+
+</section>
 
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>

@@ -9,10 +9,23 @@ html {
 }
 
 body {
+    min-height: 100vh;
+
     background:
-        radial-gradient(circle at top, #30103d, #08000d 55%, #020205);
+        radial-gradient(
+            circle at top,
+            #30103d,
+            #08000d 55%,
+            #020205
+        );
+
     color: white;
-    font-family: Tahoma, Arial, sans-serif;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
     overflow-x: hidden;
 }
 
@@ -23,12 +36,19 @@ body {
 
 .stars {
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: 0;
 
     background-image:
-        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px);
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8) 1px,
+            transparent 1px
+        );
 
     background-size: 70px 70px;
 
@@ -44,7 +64,6 @@ body {
     to {
         transform: translateY(70px);
     }
-
 }
 
 
@@ -54,19 +73,24 @@ body {
 
 .screen,
 .section {
+
     min-height: 100vh;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     position: relative;
 
     z-index: 1;
 
-    padding: 40px 20px;
+    padding: 70px 20px;
+
+    text-align: center;
 }
 
 
@@ -75,18 +99,59 @@ body {
 }
 
 
+button {
+
+    border: none;
+
+    padding: 14px 35px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3f9f,
+            #8d2bff
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 40px rgba(255,0,150,.25);
+
+    transition: .3s;
+}
+
+button:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 15px 50px rgba(255,0,150,.5);
+}
+
+
 /* =========================
    HERO
 ========================= */
 
 .hero-content {
+
     text-align: center;
 
-    animation: fadeUp 2s ease;
+    animation:
+        fadeUp 2s ease;
 }
 
 
 .small-text {
+
     color: #d7b7df;
 
     font-size: 16px;
@@ -97,22 +162,25 @@ body {
 
 .hero-content h1 {
 
-    font-size: clamp(70px, 15vw, 150px);
+    font-size:
+        clamp(70px, 15vw, 150px);
 
     letter-spacing: 15px;
 
-    background: linear-gradient(
-        90deg,
-        #fff,
-        #ff8bdc,
-        #fff
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff8bdc,
+            #fff
+        );
 
     -webkit-background-clip: text;
+
     color: transparent;
 
     text-shadow:
-        0 0 30px rgba(255, 80, 190, .5);
+        0 0 30px rgba(255,80,190,.5);
 }
 
 
@@ -122,7 +190,8 @@ body {
 
     color: #ff4da6;
 
-    animation: heartbeat 1.4s infinite;
+    animation:
+        heartbeat 1.4s infinite;
 
     text-shadow:
         0 0 30px #ff258d,
@@ -140,55 +209,9 @@ body {
 }
 
 
-button {
-
-    border: none;
-
-    padding: 14px 35px;
-
-    border-radius: 50px;
-
-    background: linear-gradient(
-        135deg,
-        #ff3f9f,
-        #8d2bff
-    );
-
-    color: white;
-
-    font-size: 16px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 40px rgba(255, 0, 150, .25);
-
-    transition: .3s;
-}
-
-
-button:hover {
-
-    transform: translateY(-4px) scale(1.04);
-
-    box-shadow:
-        0 15px 50px rgba(255, 0, 150, .5);
-}
-
-
 /* =========================
    SECTIONS
 ========================= */
-
-.section {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
 
 .section-label {
 
@@ -204,7 +227,8 @@ button:hover {
 
 .section h2 {
 
-    font-size: clamp(35px, 7vw, 60px);
+    font-size:
+        clamp(35px, 7vw, 60px);
 
     margin-bottom: 25px;
 }
@@ -273,7 +297,8 @@ button:hover {
 
     position: absolute;
 
-    right: calc(50% - 8px);
+    right:
+        calc(50% - 8px);
 
     top: 15px;
 
@@ -298,16 +323,17 @@ button:hover {
 
     padding: 25px;
 
-    background: rgba(255,255,255,.05);
+    background:
+        rgba(255,255,255,.05);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border:
+        1px solid rgba(255,255,255,.08);
 
     border-radius: 20px;
 
     backdrop-filter: blur(10px);
 
     text-align: right;
-
 }
 
 
@@ -322,7 +348,6 @@ button:hover {
 .memory h3 {
 
     margin: 10px 0;
-
 }
 
 
@@ -336,13 +361,21 @@ button:hover {
 
 .next-btn {
 
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 
 /* =========================
-   ENVELOPE
+   LETTER
 ========================= */
+
+.letter-hint {
+
+    color: #bca8be;
+
+    margin-bottom: 20px;
+}
+
 
 .envelope {
 
@@ -352,11 +385,12 @@ button:hover {
 
     position: relative;
 
-    margin: 50px auto;
+    margin:
+        80px auto 30px;
 
     cursor: pointer;
 
-    perspective: 1000px;
+    flex-shrink: 0;
 }
 
 
@@ -375,26 +409,6 @@ button:hover {
 }
 
 
-.envelope-front {
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 0;
-    height: 0;
-
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-
-    border-bottom: 120px solid #9e2166;
-
-    z-index: 3;
-}
-
-
 .letter-paper {
 
     position: absolute;
@@ -405,7 +419,9 @@ button:hover {
 
     bottom: 10px;
 
-    height: 190px;
+    min-height: 190px;
+
+    height: auto;
 
     background: #fff5fa;
 
@@ -418,12 +434,16 @@ button:hover {
     z-index: 2;
 
     transition: .8s;
+
+    text-align: right;
 }
 
 
 .letter-paper h3 {
 
     margin-bottom: 15px;
+
+    color: #7b164e;
 }
 
 
@@ -433,21 +453,261 @@ button:hover {
 
     font-size: 14px;
 
-    text-align: right;
+    white-space: normal;
+
 }
 
 
-.envelope.open .letter-paper {
+.envelope-front {
 
-    transform: translateY(-130px);
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        160px solid transparent;
+
+    border-right:
+        160px solid transparent;
+
+    border-bottom:
+        120px solid #9e2166;
+
+    z-index: 3;
+}
+
+
+.envelope.open {
+
+    margin-bottom: 160px;
+}
+
+
+.envelope.open
+.letter-paper {
+
+    transform:
+        translateY(-150px);
 
     z-index: 5;
 }
 
 
 /* =========================
+   LETTER NEXT
+========================= */
+
+.next-area {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    padding: 30px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border-radius: 20px;
+
+    animation:
+        fadeUp .8s ease;
+}
+
+
+.next-area p {
+
+    color: #cbb6ca;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   PUZZLE
+========================= */
+
+.puzzle-description {
+
+    color: #cbb7ca;
+
+    line-height: 2;
+
+    margin-bottom: 30px;
+}
+
+
+.puzzle-wrapper {
+
+    padding: 12px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.4);
+}
+
+
+.puzzle-board {
+
+    width:
+        min(84vw, 420px);
+
+    height:
+        min(84vw, 420px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+    gap: 4px;
+
+    background: #190b1d;
+
+    padding: 4px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+.puzzle-piece {
+
+    position: relative;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform .2s,
+        filter .2s;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3f9f,
+            #7c28a8
+        );
+}
+
+
+.puzzle-piece:hover {
+
+    transform: scale(.96);
+
+    filter: brightness(1.3);
+}
+
+
+.puzzle-piece.selected {
+
+    transform: scale(.93);
+
+    filter:
+        brightness(1.5);
+
+    box-shadow:
+        inset 0 0 0 4px white;
+}
+
+
+.puzzle-piece::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.18),
+            transparent
+        );
+}
+
+
+/*
+    تصویر پازل با CSS ساخته شده.
+    بعداً می‌توانیم عکس واقعی شما را
+    جایگزین کنیم.
+*/
+
+.puzzle-piece {
+
+    background-image:
+        radial-gradient(
+            circle at 50% 45%,
+            #ffb4df 0 12%,
+            transparent 13%
+        ),
+        radial-gradient(
+            circle at 30% 35%,
+            #ff4da6 0 8%,
+            transparent 9%
+        ),
+        radial-gradient(
+            circle at 70% 65%,
+            #8e3fff 0 15%,
+            transparent 16%
+        ),
+        linear-gradient(
+            135deg,
+            #4a145c,
+            #ff3f9f,
+            #5c1c88
+        );
+
+    background-size:
+        100% 100%;
+}
+
+
+.puzzle-status {
+
+    margin-top: 25px;
+
+    color: #ff91c8;
+
+    min-height: 25px;
+}
+
+
+/* =========================
    GIFT
 ========================= */
+
+.surprise-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
 
 .gift {
 
@@ -461,7 +721,8 @@ button:hover {
 
     cursor: pointer;
 
-    animation: floating 2s ease-in-out infinite;
+    animation:
+        floating 2s ease-in-out infinite;
 }
 
 
@@ -475,11 +736,12 @@ button:hover {
 
     bottom: 0;
 
-    background: linear-gradient(
-        135deg,
-        #e72e7e,
-        #8f1f91
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #e72e7e,
+            #8f1f91
+        );
 
     border-radius: 8px;
 }
@@ -523,6 +785,16 @@ button:hover {
 }
 
 
+.gift-text {
+
+    color: #cbb6ca;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+
 /* =========================
    FINAL
 ========================= */
@@ -532,7 +804,7 @@ button:hover {
     background:
         radial-gradient(
             circle,
-            rgba(255, 0, 150, .18),
+            rgba(255,0,150,.18),
             transparent 55%
         );
 }
@@ -544,7 +816,8 @@ button:hover {
 
     color: #ff4da6;
 
-    animation: heartbeat 1.2s infinite;
+    animation:
+        heartbeat 1.2s infinite;
 
     text-shadow:
         0 0 60px #ff1c91;
@@ -600,7 +873,6 @@ button:hover {
     50% {
         transform: scale(1.2);
     }
-
 }
 
 
@@ -613,7 +885,6 @@ button:hover {
     50% {
         transform: translateY(-15px);
     }
-
 }
 
 
@@ -621,14 +892,17 @@ button:hover {
 
     from {
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(30px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
-    }
 
+        transform:
+            translateY(0);
+    }
 }
 
 
@@ -638,25 +912,82 @@ button:hover {
 
 @media (max-width: 600px) {
 
+    .section {
+        padding:
+            70px 15px;
+    }
+
+
     .timeline::before {
         right: 20px;
     }
 
+
     .timeline-item {
-        justify-content: flex-start;
+        justify-content:
+            flex-start;
     }
+
 
     .timeline-dot {
         right: 12px;
     }
 
+
     .memory {
-        width: calc(100% - 50px);
+
+        width:
+            calc(100% - 50px);
+
         margin-right: 50px;
     }
 
+
     .envelope {
-        transform: scale(.85);
+
+        width: 290px;
+
+        height: 200px;
     }
 
+
+    .envelope-front {
+
+        border-left-width:
+            145px;
+
+        border-right-width:
+            145px;
+    }
+
+
+    .envelope.open {
+
+        margin-bottom:
+            170px;
+    }
+
+
+    .letter-paper {
+
+        left: 15px;
+
+        right: 15px;
+
+        padding: 20px;
+    }
+
+
+    .final-content h1 {
+
+        font-size: 50px;
+    }
+
+
+    .final-content h2 {
+
+        font-size: 20px;
+
+        line-height: 1.8;
+    }
 }
