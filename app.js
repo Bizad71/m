@@ -68,7 +68,7 @@ const openGift =
 
 
 /* =====================================================
-   SECTION SYSTEM
+   SHOW SECTION
 ===================================================== */
 
 function showSection(section) {
@@ -88,11 +88,7 @@ function showSection(section) {
         }
     );
 
-
-    section.classList.remove(
-        "hidden"
-    );
-
+    section.classList.remove("hidden");
 
     window.scrollTo({
         top: 0,
@@ -174,14 +170,11 @@ function openLetter() {
         return;
     }
 
-
     letterStarted = true;
-
 
     envelope.classList.add(
         "open"
     );
-
 
     setTimeout(
         typeLetter,
@@ -235,7 +228,6 @@ function typeLetter() {
 
     letterIndex++;
 
-
     setTimeout(
         typeLetter,
         35
@@ -268,12 +260,20 @@ let selectedPiece = null;
 let puzzleSolved = false;
 
 
+/*
+    ترتیب درست قطعات
+*/
+
 const correctOrder = [
     0, 1, 2,
     3, 4, 5,
     6, 7, 8
 ];
 
+
+/* =====================================================
+   CREATE PUZZLE
+===================================================== */
 
 function createPuzzle() {
 
@@ -288,7 +288,7 @@ function createPuzzle() {
     );
 
     puzzleStatus.textContent =
-        "قطعات را جابه‌جا کن ❤️";
+        "یک قطعه را انتخاب کن ❤️";
 
 
     let pieces = [
@@ -297,6 +297,11 @@ function createPuzzle() {
         6, 7, 8
     ];
 
+
+    /*
+       تا وقتی کاملاً درست است
+       دوباره مخلوط کن
+    */
 
     do {
 
@@ -325,7 +330,7 @@ function createPuzzle() {
 
 
 /* =====================================================
-   CREATE PIECE
+   CREATE PUZZLE PIECE
 ===================================================== */
 
 function createPuzzlePiece(
@@ -352,7 +357,11 @@ function createPuzzlePiece(
 
 
     /*
-        جای تصویر هر قطعه
+       موقعیت عکس اصلی
+
+       0 1 2
+       3 4 5
+       6 7 8
     */
 
     const row =
@@ -362,8 +371,20 @@ function createPuzzlePiece(
         number % 3;
 
 
+    /*
+       برای 3×3:
+       0% / 50% / 100%
+    */
+
+    const x =
+        column * 50;
+
+    const y =
+        row * 50;
+
+
     piece.style.backgroundPosition =
-        `${column * 50}% ${row * 50}%`;
+        `${x}% ${y}%`;
 
 
     piece.addEventListener(
@@ -395,6 +416,10 @@ function handlePieceClick(piece) {
     }
 
 
+    /*
+       قطعه اول
+    */
+
     if (!selectedPiece) {
 
         selectedPiece = piece;
@@ -410,6 +435,10 @@ function handlePieceClick(piece) {
     }
 
 
+    /*
+       اگر همان قطعه را زد
+    */
+
     if (
         selectedPiece === piece
     ) {
@@ -421,11 +450,15 @@ function handlePieceClick(piece) {
         selectedPiece = null;
 
         puzzleStatus.textContent =
-            "قطعات را انتخاب کن.";
+            "یک قطعه را انتخاب کن ❤️";
 
         return;
     }
 
+
+    /*
+       تعویض دو قطعه
+    */
 
     swapPieces(
         selectedPiece,
@@ -446,7 +479,7 @@ function handlePieceClick(piece) {
 
 
 /* =====================================================
-   SWAP
+   SWAP PIECES
 ===================================================== */
 
 function swapPieces(
@@ -497,13 +530,20 @@ function updatePieceImage(
         number % 3;
 
 
+    const x =
+        column * 50;
+
+    const y =
+        row * 50;
+
+
     piece.style.backgroundPosition =
-        `${column * 50}% ${row * 50}%`;
+        `${x}% ${y}%`;
 }
 
 
 /* =====================================================
-   CHECK
+   CHECK PUZZLE
 ===================================================== */
 
 function checkPuzzle() {
@@ -534,7 +574,7 @@ function checkPuzzle() {
     if (!solved) {
 
         puzzleStatus.textContent =
-            "هنوز درست نشده... ادامه بده ❤️";
+            "هنوز کامل نشده... ادامه بده ❤️";
 
         return;
     }
@@ -544,7 +584,7 @@ function checkPuzzle() {
 
 
     puzzleStatus.innerHTML =
-        "🎉 پازل کامل شد!";
+        "🎉 عکس کامل شد! ❤️";
 
 
     puzzleNext.classList.remove(
@@ -593,7 +633,6 @@ function shuffle(array) {
             array[i]
         ];
     }
-
 }
 
 
@@ -628,7 +667,7 @@ openGift.addEventListener(
 
 
 /* =====================================================
-   BIG HEARTS
+   HEART ANIMATION
 ===================================================== */
 
 function createHearts() {
@@ -727,7 +766,6 @@ function createHearts() {
             },
             duration
         );
-
     }
 }
 
@@ -828,6 +866,5 @@ function createSmallHearts() {
             },
             1200
         );
-
     }
 }

@@ -4,14 +4,11 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     min-height: 100vh;
 
     background:
@@ -36,9 +33,7 @@ body {
 /* ================= STARS ================= */
 
 .stars {
-
     position: fixed;
-
     inset: 0;
 
     pointer-events: none;
@@ -58,7 +53,6 @@ body {
         starsMove 15s linear infinite;
 }
 
-
 @keyframes starsMove {
 
     from {
@@ -68,7 +62,6 @@ body {
     to {
         transform: translateY(70px);
     }
-
 }
 
 
@@ -76,7 +69,6 @@ body {
 
 .screen,
 .section {
-
     min-height: 100vh;
 
     display: flex;
@@ -96,14 +88,11 @@ body {
     text-align: center;
 }
 
-
 .hidden {
     display: none !important;
 }
 
-
 button {
-
     border: none;
 
     padding: 14px 35px;
@@ -129,9 +118,7 @@ button {
     transition: .3s;
 }
 
-
 button:hover {
-
     transform:
         translateY(-4px)
         scale(1.04);
@@ -144,16 +131,13 @@ button:hover {
 /* ================= HERO ================= */
 
 .hero-content {
-
     text-align: center;
 
     animation:
         fadeUp 2s ease;
 }
 
-
 .small-text {
-
     color: #d7b7df;
 
     font-size: 16px;
@@ -161,9 +145,7 @@ button:hover {
     margin-bottom: 25px;
 }
 
-
 .hero-content h1 {
-
     font-size:
         clamp(70px,15vw,150px);
 
@@ -180,14 +162,9 @@ button:hover {
     -webkit-background-clip: text;
 
     color: transparent;
-
-    text-shadow:
-        0 0 30px rgba(255,80,190,.5);
 }
 
-
 .heart {
-
     font-size: 70px;
 
     color: #ff4da6;
@@ -200,9 +177,7 @@ button:hover {
         0 0 70px #ff258d;
 }
 
-
 .hero-content p {
-
     margin: 25px 0;
 
     color: #d6c4d9;
@@ -214,7 +189,6 @@ button:hover {
 /* ================= TITLES ================= */
 
 .section-label {
-
     color: #ff65b4;
 
     font-size: 12px;
@@ -224,9 +198,7 @@ button:hover {
     margin-bottom: 15px;
 }
 
-
 .section h2 {
-
     font-size:
         clamp(35px,7vw,60px);
 
@@ -237,7 +209,6 @@ button:hover {
 /* ================= STORY ================= */
 
 .intro {
-
     color: #cdbbd0;
 
     line-height: 2;
@@ -245,9 +216,7 @@ button:hover {
     margin-bottom: 60px;
 }
 
-
 .timeline {
-
     width: 100%;
 
     max-width: 700px;
@@ -255,9 +224,7 @@ button:hover {
     position: relative;
 }
 
-
 .timeline::before {
-
     content: "";
 
     position: absolute;
@@ -278,9 +245,7 @@ button:hover {
         );
 }
 
-
 .timeline-item {
-
     position: relative;
 
     display: flex;
@@ -290,9 +255,7 @@ button:hover {
     margin-bottom: 60px;
 }
 
-
 .timeline-dot {
-
     position: absolute;
 
     right:
@@ -314,9 +277,7 @@ button:hover {
     z-index: 2;
 }
 
-
 .memory {
-
     width: 45%;
 
     padding: 25px;
@@ -334,31 +295,23 @@ button:hover {
     text-align: right;
 }
 
-
 .memory span {
-
     color: #ff70b8;
 
     font-size: 12px;
 }
 
-
 .memory h3 {
-
     margin: 10px 0;
 }
 
-
 .memory p {
-
     color: #bdaebe;
 
     line-height: 1.9;
 }
 
-
 .next-btn {
-
     margin-top: 35px;
 }
 
@@ -366,15 +319,12 @@ button:hover {
 /* ================= LETTER ================= */
 
 .letter-hint {
-
     color: #bca8be;
 
     margin-bottom: 20px;
 }
 
-
 .envelope {
-
     width: 320px;
 
     height: 220px;
@@ -391,9 +341,7 @@ button:hover {
     flex-shrink: 0;
 }
 
-
 .envelope-back {
-
     position: absolute;
 
     inset: 0;
@@ -406,13 +354,10 @@ button:hover {
         0 20px 70px rgba(0,0,0,.5);
 }
 
-
 .letter-paper {
-
     position: absolute;
 
     left: 20px;
-
     right: 20px;
 
     bottom: 10px;
@@ -433,39 +378,27 @@ button:hover {
         transform .9s ease;
 
     text-align: right;
-
-    overflow: visible;
 }
 
-
 .letter-paper h3 {
-
     margin-bottom: 15px;
 
     color: #7b164e;
 }
 
-
 .letter-paper p {
-
     line-height: 2;
 
     font-size: 14px;
-
-    white-space: normal;
 }
 
-
 .envelope-front {
-
     position: absolute;
 
     bottom: 0;
-
     left: 0;
 
     width: 0;
-
     height: 0;
 
     border-left:
@@ -482,16 +415,12 @@ button:hover {
     pointer-events: none;
 }
 
-
 .envelope.open {
-
     margin-bottom: 220px;
 }
 
-
 .envelope.open
 .letter-paper {
-
     transform:
         translateY(-170px);
 
@@ -502,7 +431,6 @@ button:hover {
 /* ================= LETTER NEXT ================= */
 
 .next-area {
-
     width: 100%;
 
     max-width: 600px;
@@ -520,9 +448,7 @@ button:hover {
         fadeUp .8s ease;
 }
 
-
 .next-area p {
-
     color: #cbb6ca;
 
     line-height: 2;
@@ -531,10 +457,11 @@ button:hover {
 }
 
 
-/* ================= PUZZLE ================= */
+/* =====================================================
+   PUZZLE
+===================================================== */
 
 .puzzle-description {
-
     color: #cbb7ca;
 
     line-height: 2;
@@ -542,9 +469,7 @@ button:hover {
     margin-bottom: 30px;
 }
 
-
 .puzzle-container {
-
     padding: 12px;
 
     border-radius: 22px;
@@ -556,22 +481,20 @@ button:hover {
         0 20px 70px rgba(0,0,0,.4);
 }
 
-
 .puzzle-board {
-
     width:
-        min(84vw,420px);
+        min(84vw, 420px);
 
     height:
-        min(84vw,420px);
+        min(84vw, 420px);
 
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     grid-template-rows:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 4px;
 
@@ -585,7 +508,10 @@ button:hover {
 }
 
 
+/* ================= PUZZLE PIECES ================= */
+
 .puzzle-piece {
+    position: relative;
 
     border-radius: 8px;
 
@@ -593,53 +519,55 @@ button:hover {
 
     transition:
         transform .2s,
-        filter .2s;
+        filter .2s,
+        box-shadow .2s;
+
+    background-repeat: no-repeat;
+
+    /*
+       عکس از اینترنت
+    */
 
     background-image:
-        linear-gradient(
-            135deg,
-            #ff3f9f,
-            #6c24a0
-        );
+        url("https://img.myshopline.com/image/store/1733380126337/2-3-fdd3b88d-e463-4c3d-bd7b-42e8e134c78d.png?h=1000&w=1000");
 
     background-size:
         300% 300%;
 }
 
-
 .puzzle-piece:hover {
-
     transform: scale(.96);
 
-    filter: brightness(1.3);
+    filter: brightness(1.2);
 }
-
 
 .puzzle-piece.selected {
-
     transform: scale(.92);
 
-    filter: brightness(1.5);
+    filter: brightness(1.4);
 
     box-shadow:
-        inset 0 0 0 4px white;
+        inset 0 0 0 4px white,
+        0 0 25px #ff4da6;
 }
 
 
-.puzzle-status {
+/* ================= PUZZLE STATUS ================= */
 
+.puzzle-status {
     min-height: 30px;
 
     margin-top: 25px;
 
     color: #ff91c8;
+
+    font-size: 15px;
 }
 
 
 /* ================= GIFT ================= */
 
 .surprise-container {
-
     display: flex;
 
     flex-direction: column;
@@ -647,9 +575,7 @@ button:hover {
     align-items: center;
 }
 
-
 .gift {
-
     width: 180px;
 
     height: 180px;
@@ -664,9 +590,7 @@ button:hover {
         floating 2s ease-in-out infinite;
 }
 
-
 .gift-box {
-
     position: absolute;
 
     width: 180px;
@@ -685,9 +609,7 @@ button:hover {
     border-radius: 8px;
 }
 
-
 .gift-lid {
-
     position: absolute;
 
     width: 195px;
@@ -705,9 +627,7 @@ button:hover {
     z-index: 2;
 }
 
-
 .ribbon {
-
     position: absolute;
 
     width: 35px;
@@ -723,9 +643,7 @@ button:hover {
     z-index: 3;
 }
 
-
 .gift-text {
-
     color: #cbb6ca;
 
     line-height: 2;
@@ -737,7 +655,6 @@ button:hover {
 /* ================= FINAL ================= */
 
 #final {
-
     background:
         radial-gradient(
             circle,
@@ -746,9 +663,7 @@ button:hover {
         );
 }
 
-
 .final-heart {
-
     font-size: 100px;
 
     color: #ff4da6;
@@ -760,9 +675,7 @@ button:hover {
         0 0 60px #ff1c91;
 }
 
-
 .final-content h1 {
-
     font-size: 70px;
 
     letter-spacing: 10px;
@@ -770,9 +683,7 @@ button:hover {
     margin: 20px;
 }
 
-
 .final-content h2 {
-
     font-size: 25px;
 
     font-weight: normal;
@@ -780,17 +691,13 @@ button:hover {
     line-height: 1.8;
 }
 
-
 .final-content p {
-
     color: #c5afc4;
 
     margin-top: 20px;
 }
 
-
 .forever {
-
     font-size: 80px;
 
     color: #ff70ba;
@@ -813,7 +720,6 @@ button:hover {
     }
 }
 
-
 @keyframes floating {
 
     0%,
@@ -826,11 +732,9 @@ button:hover {
     }
 }
 
-
 @keyframes fadeUp {
 
     from {
-
         opacity: 0;
 
         transform:
@@ -838,7 +742,6 @@ button:hover {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -849,53 +752,40 @@ button:hover {
 
 /* ================= MOBILE ================= */
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
 
     .section {
-
         padding:
             70px 15px;
     }
 
-
     .timeline::before {
-
         right: 20px;
     }
 
-
     .timeline-item {
-
         justify-content:
             flex-start;
     }
 
-
     .timeline-dot {
-
         right: 12px;
     }
 
-
     .memory {
-
         width:
             calc(100% - 50px);
 
         margin-right: 50px;
     }
 
-
     .envelope {
-
         width: 290px;
 
         height: 200px;
     }
 
-
     .envelope-front {
-
         border-left-width:
             145px;
 
@@ -903,33 +793,23 @@ button:hover {
             145px;
     }
 
-
     .envelope.open {
-
         margin-bottom:
             240px;
     }
 
-
     .letter-paper {
-
         left: 15px;
-
         right: 15px;
 
         padding: 20px;
     }
 
-
     .final-content h1 {
-
         font-size: 50px;
     }
 
-
     .final-content h2 {
-
         font-size: 20px;
     }
-
 }
