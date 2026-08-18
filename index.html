@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>برای MAHI ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- پس‌زمینه -->
+    <div class="stars"></div>
+
+    <!-- موسیقی -->
+    <audio id="music" loop>
+        <!-- بعداً فایل آهنگ خودت را اینجا قرار بده -->
+        <!-- <source src="music.mp3" type="audio/mpeg"> -->
+    </audio>
+
+    <!-- صفحه اول -->
+    <section id="hero" class="screen">
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                یک چیزی برای تو ساخته‌ام...
+            </div>
+
+            <h1>MAHI</h1>
+
+            <div class="heart">♥</div>
+
+            <p>
+                این سایت فقط برای یک نفر ساخته شده...
+            </p>
+
+            <button id="startBtn">
+                شروع کن
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- بخش داستان -->
+    <section id="story" class="section hidden">
+
+        <span class="section-label">OUR STORY</span>
+
+        <h2>داستان ما</h2>
+
+        <p class="intro">
+            بعضی آدم‌ها فقط وارد زندگی آدم نمی‌شوند...
+            <br>
+            بعضی‌ها تبدیل به بخشی از زندگی آدم می‌شوند.
+        </p>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="memory">
+
+                    <span>اولین روز</span>
+
+                    <h3>از اینجا شروع شد...</h3>
+
+                    <p>
+                        شاید آن روز نمی‌دانستم قرار است
+                        چه اتفاق زیبایی در زندگی‌ام شروع شود.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="memory">
+
+                    <span>یک خاطره</span>
+
+                    <h3>خاطراتی که ماندند</h3>
+
+                    <p>
+                        از بین تمام روزهایی که گذشت،
+                        بعضی لحظه‌ها هیچ‌وقت فراموش نمی‌شوند.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="memory">
+
+                    <span>امروز</span>
+
+                    <h3>و هنوز...</h3>
+
+                    <p>
+                        هنوز وقتی به تو فکر می‌کنم،
+                        همان حس روزهای اول را دارم.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="next-btn" onclick="showLetter()">
+            یک چیز دیگر هم هست...
+        </button>
+
+    </section>
+
+
+    <!-- نامه -->
+    <section id="letter" class="section hidden">
+
+        <span class="section-label">A LETTER FOR YOU</span>
+
+        <h2>یک نامه برای تو</h2>
+
+        <div class="envelope" id="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="letter-paper">
+
+                <h3>محدثه...</h3>
+
+                <p id="letterText"></p>
+
+            </div>
+
+            <div class="envelope-front"></div>
+
+        </div>
+
+
+        <button class="next-btn hidden" id="surpriseBtn">
+            هنوز تموم نشده...
+        </button>
+
+    </section>
+
+
+    <!-- سورپرایز -->
+    <section id="surprise" class="section hidden">
+
+        <div class="surprise-container">
+
+            <div class="gift" id="gift">
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-box"></div>
+
+                <div class="ribbon"></div>
+
+            </div>
+
+
+            <p class="gift-text">
+                اینو برای تو نگه داشته بودم...
+            </p>
+
+            <button id="openGift">
+                بازش کن 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- پایان -->
+    <section id="final" class="section hidden">
+
+        <div class="final-content">
+
+            <div class="final-heart">
+                ♥
+            </div>
+
+            <h1>MAHI</h1>
+
+            <h2>
+                تو قشنگ‌ترین قسمت زندگی منی.
+            </h2>
+
+            <p>
+                و این داستان هنوز ادامه دارد...
+            </p>
+
+            <div class="forever">
+                ∞
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
