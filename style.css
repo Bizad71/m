@@ -49,8 +49,7 @@ body {
 
     background-size: 70px 70px;
 
-    animation:
-        starsMove 15s linear infinite;
+    animation: starsMove 15s linear infinite;
 }
 
 @keyframes starsMove {
@@ -133,8 +132,7 @@ button:hover {
 .hero-content {
     text-align: center;
 
-    animation:
-        fadeUp 2s ease;
+    animation: fadeUp 2s ease;
 }
 
 .small-text {
@@ -419,8 +417,7 @@ button:hover {
     margin-bottom: 220px;
 }
 
-.envelope.open
-.letter-paper {
+.envelope.open .letter-paper {
     transform:
         translateY(-170px);
 
@@ -469,24 +466,33 @@ button:hover {
     margin-bottom: 30px;
 }
 
-.puzzle-container {
+.puzzle-wrapper {
     padding: 12px;
 
-    border-radius: 22px;
+    border-radius: 25px;
 
     background:
-        rgba(255,255,255,.05);
+        rgba(255,255,255,.06);
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,.4);
+        0 20px 70px rgba(0,0,0,.5);
+
+    border:
+        1px solid rgba(255,255,255,.08);
 }
 
+
+/*
+    خود صفحه پازل
+*/
+
 .puzzle-board {
+
     width:
-        min(84vw, 420px);
+        min(90vw, 450px);
 
     height:
-        min(84vw, 420px);
+        min(90vw, 450px);
 
     display: grid;
 
@@ -496,72 +502,108 @@ button:hover {
     grid-template-rows:
         repeat(3, 1fr);
 
-    gap: 4px;
+    gap: 5px;
 
-    background: #190b1d;
+    background:
+        #050308;
 
-    padding: 4px;
+    padding: 5px;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
     overflow: hidden;
 }
 
 
-/* ================= PUZZLE PIECES ================= */
+/*
+    هر قطعه
+*/
 
 .puzzle-piece {
+
     position: relative;
+
+    width: 100%;
+
+    height: 100%;
 
     border-radius: 8px;
 
     cursor: pointer;
 
-    transition:
-        transform .2s,
-        filter .2s,
-        box-shadow .2s;
+    overflow: hidden;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1620537327385-c3c078055f73?auto=format&fit=crop&w=1200&q=85");
 
     background-repeat: no-repeat;
 
-    /*
-       عکس از اینترنت
-    */
-
-    background-image:
-        url("https://img.myshopline.com/image/store/1733380126337/2-3-fdd3b88d-e463-4c3d-bd7b-42e8e134c78d.png?h=1000&w=1000");
-
-    background-size:
-        300% 300%;
+    transition:
+        transform .2s ease,
+        filter .2s ease,
+        box-shadow .2s ease;
 }
+
+
+/*
+    افکت هنگام قرار گرفتن موس
+*/
 
 .puzzle-piece:hover {
-    transform: scale(.96);
 
-    filter: brightness(1.2);
+    transform:
+        scale(.96);
+
+    filter:
+        brightness(1.15);
 }
 
-.puzzle-piece.selected {
-    transform: scale(.92);
 
-    filter: brightness(1.4);
+/*
+    قطعه انتخاب شده
+*/
+
+.puzzle-piece.selected {
+
+    transform:
+        scale(.93);
+
+    filter:
+        brightness(1.4);
 
     box-shadow:
         inset 0 0 0 4px white,
         0 0 25px #ff4da6;
+
+    z-index: 5;
+}
+
+
+/*
+    بعد از حل پازل
+*/
+
+.puzzle-piece.solved {
+
+    box-shadow:
+        inset 0 0 0 2px rgba(255,255,255,.5);
+
+    cursor:
+        default;
 }
 
 
 /* ================= PUZZLE STATUS ================= */
 
 .puzzle-status {
-    min-height: 30px;
+
+    min-height: 35px;
 
     margin-top: 25px;
 
     color: #ff91c8;
 
-    font-size: 15px;
+    font-size: 16px;
 }
 
 
@@ -781,7 +823,6 @@ button:hover {
 
     .envelope {
         width: 290px;
-
         height: 200px;
     }
 
@@ -801,8 +842,15 @@ button:hover {
     .letter-paper {
         left: 15px;
         right: 15px;
-
         padding: 20px;
+    }
+
+    .puzzle-board {
+        width:
+            min(90vw, 380px);
+
+        height:
+            min(90vw, 380px);
     }
 
     .final-content h1 {
