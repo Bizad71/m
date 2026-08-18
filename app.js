@@ -2,39 +2,73 @@
    ELEMENTS
 ===================================================== */
 
-const hero = document.getElementById("hero");
-const story = document.getElementById("story");
-const letter = document.getElementById("letter");
-const puzzle = document.getElementById("puzzle");
-const surprise = document.getElementById("surprise");
-const final = document.getElementById("final");
+const hero =
+    document.getElementById("hero");
 
-const startBtn = document.getElementById("startBtn");
-const storyNext = document.getElementById("storyNext");
+const story =
+    document.getElementById("story");
 
-const envelope = document.getElementById("envelope");
-const letterText = document.getElementById("letterText");
+const letter =
+    document.getElementById("letter");
+
+const puzzle =
+    document.getElementById("puzzle");
+
+const surprise =
+    document.getElementById("surprise");
+
+const final =
+    document.getElementById("final");
+
+
+const startBtn =
+    document.getElementById("startBtn");
+
+const storyNext =
+    document.getElementById("storyNext");
+
+
+const envelope =
+    document.getElementById("envelope");
+
+const letterText =
+    document.getElementById("letterText");
+
 const letterNextArea =
-    document.getElementById("letterNextArea");
+    document.getElementById(
+        "letterNextArea"
+    );
+
 
 const puzzleStart =
-    document.getElementById("puzzleStart");
+    document.getElementById(
+        "puzzleStart"
+    );
 
 const puzzleBoard =
-    document.getElementById("puzzleBoard");
+    document.getElementById(
+        "puzzleBoard"
+    );
 
 const puzzleStatus =
-    document.getElementById("puzzleStatus");
+    document.getElementById(
+        "puzzleStatus"
+    );
 
 const puzzleNext =
-    document.getElementById("puzzleNext");
+    document.getElementById(
+        "puzzleNext"
+    );
+
 
 const openGift =
-    document.getElementById("openGift");
+    document.getElementById(
+        "openGift"
+    );
 
 
 /* =====================================================
-   SHOW SECTION
+   SECTION SYSTEM
 ===================================================== */
 
 function showSection(section) {
@@ -48,13 +82,17 @@ function showSection(section) {
         final
     ];
 
-    sections.forEach(item => {
+    sections.forEach(
+        item => {
+            item.classList.add("hidden");
+        }
+    );
 
-        item.classList.add("hidden");
 
-    });
+    section.classList.remove(
+        "hidden"
+    );
 
-    section.classList.remove("hidden");
 
     window.scrollTo({
         top: 0,
@@ -67,29 +105,36 @@ function showSection(section) {
    START
 ===================================================== */
 
-startBtn.addEventListener("click", () => {
+startBtn.addEventListener(
+    "click",
+    () => {
 
-    showSection(story);
+        showSection(story);
 
-});
+    }
+);
 
 
 /* =====================================================
-   STORY → LETTER
+   STORY
 ===================================================== */
 
-storyNext.addEventListener("click", () => {
+storyNext.addEventListener(
+    "click",
+    () => {
 
-    showSection(letter);
+        showSection(letter);
 
-});
+    }
+);
 
 
 /* =====================================================
    LETTER
 ===================================================== */
 
-const text = `
+const letterMessage = `محدثه...
+
 بعضی حرف‌ها را نمی‌شود
 در چند جمله گفت...
 
@@ -97,8 +142,6 @@ const text = `
 فقط یک چیز بگویم،
 
 می‌گویم:
-
-محدثه...
 
 از بین تمام اتفاق‌هایی
 که می‌توانست در زندگی من بیفتد،
@@ -111,65 +154,92 @@ const text = `
 باز هم
 تو را انتخاب می‌کنم.
 
-❤️
-`;
+❤️`;
+
 
 let letterStarted = false;
 
-let index = 0;
+let letterIndex = 0;
 
 
-envelope.addEventListener("click", () => {
+envelope.addEventListener(
+    "click",
+    openLetter
+);
+
+
+function openLetter() {
 
     if (letterStarted) {
         return;
     }
 
+
     letterStarted = true;
 
-    envelope.classList.add("open");
 
-    setTimeout(() => {
+    envelope.classList.add(
+        "open"
+    );
 
-        typeLetter();
 
-    }, 700);
-
-});
+    setTimeout(
+        typeLetter,
+        800
+    );
+}
 
 
 function typeLetter() {
 
-    if (index < text.length) {
-
-        const char = text[index];
-
-        if (char === "\n") {
-
-            letterText.innerHTML += "<br>";
-
-        } else {
-
-            letterText.innerHTML += char;
-
-        }
-
-        index++;
+    if (
+        letterIndex >=
+        letterMessage.length
+    ) {
 
         setTimeout(
-            typeLetter,
-            35
+            () => {
+
+                letterNextArea
+                    .classList
+                    .remove("hidden");
+
+            },
+            700
         );
+
+        return;
+    }
+
+
+    const character =
+        letterMessage[
+            letterIndex
+        ];
+
+
+    if (
+        character === "\n"
+    ) {
+
+        letterText.innerHTML +=
+            "<br>";
 
     } else {
 
-        setTimeout(() => {
-
-            letterNextArea.classList.remove("hidden");
-
-        }, 500);
+        letterText.innerHTML +=
+            character;
 
     }
+
+
+    letterIndex++;
+
+
+    setTimeout(
+        typeLetter,
+        35
+    );
 }
 
 
@@ -177,33 +247,26 @@ function typeLetter() {
    LETTER → PUZZLE
 ===================================================== */
 
-puzzleStart.addEventListener("click", () => {
+puzzleStart.addEventListener(
+    "click",
+    () => {
 
-    showSection(puzzle);
+        showSection(puzzle);
 
-    createPuzzle();
+        createPuzzle();
 
-});
+    }
+);
 
 
 /* =====================================================
    PUZZLE
 ===================================================== */
 
-let puzzlePieces = [];
-
 let selectedPiece = null;
 
 let puzzleSolved = false;
 
-
-/*
-    شماره صحیح قطعات:
-
-    0 1 2
-    3 4 5
-    6 7 8
-*/
 
 const correctOrder = [
     0, 1, 2,
@@ -216,69 +279,88 @@ function createPuzzle() {
 
     puzzleBoard.innerHTML = "";
 
-    puzzleSolved = false;
-
     selectedPiece = null;
 
-    puzzleNext.classList.add("hidden");
+    puzzleSolved = false;
+
+    puzzleNext.classList.add(
+        "hidden"
+    );
 
     puzzleStatus.textContent =
-        "قطعات را جابه‌جا کن...";
+        "قطعات را جابه‌جا کن ❤️";
 
-    /*
-        قطعات را به شکل تصادفی می‌چینیم
-    */
 
-    puzzlePieces = [
+    let pieces = [
         0, 1, 2,
         3, 4, 5,
         6, 7, 8
     ];
 
 
-    shufflePuzzle();
+    do {
+
+        shuffle(pieces);
+
+    } while (
+        pieces.every(
+            (value, index) =>
+                value ===
+                correctOrder[index]
+        )
+    );
 
 
-    puzzlePieces.forEach(
-        (pieceNumber, position) => {
+    pieces.forEach(
+        (number, position) => {
 
-            createPiece(
-                pieceNumber,
+            createPuzzlePiece(
+                number,
                 position
             );
 
         }
     );
-
 }
 
 
-function createPiece(
-    pieceNumber,
+/* =====================================================
+   CREATE PIECE
+===================================================== */
+
+function createPuzzlePiece(
+    number,
     position
 ) {
 
     const piece =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     piece.className =
         "puzzle-piece";
 
+
+    piece.dataset.number =
+        number;
+
+
     piece.dataset.position =
         position;
 
-    piece.dataset.number =
-        pieceNumber;
 
     /*
-        موقعیت قطعه روی تصویر
+        جای تصویر هر قطعه
     */
 
     const row =
-        Math.floor(pieceNumber / 3);
+        Math.floor(number / 3);
 
     const column =
-        pieceNumber % 3;
+        number % 3;
+
 
     piece.style.backgroundPosition =
         `${column * 50}% ${row * 50}%`;
@@ -288,33 +370,38 @@ function createPiece(
         "click",
         () => {
 
-            selectPiece(piece);
+            handlePieceClick(
+                piece
+            );
 
         }
     );
 
 
-    puzzleBoard.appendChild(piece);
-
+    puzzleBoard.appendChild(
+        piece
+    );
 }
 
 
-function selectPiece(piece) {
+/* =====================================================
+   CLICK PIECE
+===================================================== */
+
+function handlePieceClick(piece) {
 
     if (puzzleSolved) {
         return;
     }
 
 
-    /*
-        انتخاب قطعه اول
-    */
-
     if (!selectedPiece) {
 
         selectedPiece = piece;
 
-        piece.classList.add("selected");
+        piece.classList.add(
+            "selected"
+        );
 
         puzzleStatus.textContent =
             "حالا قطعه دوم را انتخاب کن.";
@@ -323,26 +410,22 @@ function selectPiece(piece) {
     }
 
 
-    /*
-        اگر همان قطعه دوباره انتخاب شد
-    */
+    if (
+        selectedPiece === piece
+    ) {
 
-    if (selectedPiece === piece) {
-
-        piece.classList.remove("selected");
+        piece.classList.remove(
+            "selected"
+        );
 
         selectedPiece = null;
 
         puzzleStatus.textContent =
-            "یک قطعه را انتخاب کن.";
+            "قطعات را انتخاب کن.";
 
         return;
     }
 
-
-    /*
-        جابه‌جایی دو قطعه
-    */
 
     swapPieces(
         selectedPiece,
@@ -354,17 +437,17 @@ function selectPiece(piece) {
         "selected"
     );
 
+
     selectedPiece = null;
 
 
-    /*
-        بررسی حل شدن
-    */
-
     checkPuzzle();
-
 }
 
+
+/* =====================================================
+   SWAP
+===================================================== */
 
 function swapPieces(
     first,
@@ -385,121 +468,54 @@ function swapPieces(
         firstNumber;
 
 
-    /*
-        ظاهر قطعات را عوض می‌کنیم
-    */
-
-    const firstPosition =
-        getBackgroundPosition(
-            Number(secondNumber)
-        );
-
-    const secondPosition =
-        getBackgroundPosition(
-            Number(firstNumber)
-        );
+    updatePieceImage(
+        first,
+        Number(secondNumber)
+    );
 
 
-    first.style.backgroundPosition =
-        firstPosition;
-
-    second.style.backgroundPosition =
-        secondPosition;
-
+    updatePieceImage(
+        second,
+        Number(firstNumber)
+    );
 }
 
 
-function getBackgroundPosition(
-    pieceNumber
+/* =====================================================
+   UPDATE IMAGE
+===================================================== */
+
+function updatePieceImage(
+    piece,
+    number
 ) {
 
     const row =
-        Math.floor(pieceNumber / 3);
+        Math.floor(number / 3);
 
     const column =
-        pieceNumber % 3;
+        number % 3;
 
 
-    /*
-        برای CSS background-position
-    */
-
-    const x =
-        column * 50;
-
-    const y =
-        row * 50;
-
-
-    return `${x}% ${y}%`;
+    piece.style.backgroundPosition =
+        `${column * 50}% ${row * 50}%`;
 }
 
 
 /* =====================================================
-   SHUFFLE
-===================================================== */
-
-function shufflePuzzle() {
-
-    /*
-        مطمئن می‌شویم پازل
-        از اول حل نباشد.
-    */
-
-    do {
-
-        for (
-            let i = puzzlePieces.length - 1;
-            i > 0;
-            i--
-        ) {
-
-            const j =
-                Math.floor(
-                    Math.random() * (i + 1)
-                );
-
-            [
-                puzzlePieces[i],
-                puzzlePieces[j]
-            ] = [
-                puzzlePieces[j],
-                puzzlePieces[i]
-            ];
-
-        }
-
-    } while (
-        isPuzzleAlreadySolved()
-    );
-
-}
-
-
-function isPuzzleAlreadySolved() {
-
-    return puzzlePieces.every(
-        (value, index) =>
-            value === correctOrder[index]
-    );
-
-}
-
-
-/* =====================================================
-   CHECK PUZZLE
+   CHECK
 ===================================================== */
 
 function checkPuzzle() {
 
     const pieces =
-        document.querySelectorAll(
-            ".puzzle-piece"
+        Array.from(
+            puzzleBoard.children
         );
 
 
     const current =
-        Array.from(pieces).map(
+        pieces.map(
             piece =>
                 Number(
                     piece.dataset.number
@@ -510,37 +526,72 @@ function checkPuzzle() {
     const solved =
         current.every(
             (value, index) =>
-                value === correctOrder[index]
+                value ===
+                correctOrder[index]
         );
 
 
-    if (solved) {
-
-        puzzleSolved = true;
-
-        puzzleStatus.innerHTML =
-            "🎉 درستش کردی! راز بعدی منتظرته.";
-
-        pieces.forEach(piece => {
-
-            piece.style.cursor =
-                "default";
-
-        });
-
-
-        puzzleNext.classList.remove(
-            "hidden"
-        );
-
-
-        createSmallHearts();
-
-    } else {
+    if (!solved) {
 
         puzzleStatus.textContent =
             "هنوز درست نشده... ادامه بده ❤️";
 
+        return;
+    }
+
+
+    puzzleSolved = true;
+
+
+    puzzleStatus.innerHTML =
+        "🎉 پازل کامل شد!";
+
+
+    puzzleNext.classList.remove(
+        "hidden"
+    );
+
+
+    pieces.forEach(
+        piece => {
+
+            piece.style.cursor =
+                "default";
+
+        }
+    );
+
+
+    createSmallHearts();
+}
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array) {
+
+    for (
+        let i = array.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+
+        [
+            array[i],
+            array[j]
+        ] = [
+            array[j],
+            array[i]
+        ];
     }
 
 }
@@ -577,7 +628,7 @@ openGift.addEventListener(
 
 
 /* =====================================================
-   HEARTS
+   BIG HEARTS
 ===================================================== */
 
 function createHearts() {
@@ -589,29 +640,43 @@ function createHearts() {
     ) {
 
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        heart.innerHTML = "♥";
+
+        heart.innerHTML =
+            "♥";
+
 
         heart.style.position =
             "fixed";
 
+
         heart.style.left =
-            Math.random() * 100 + "vw";
+            Math.random() *
+            100 +
+            "vw";
+
 
         heart.style.bottom =
             "-40px";
 
+
         heart.style.fontSize =
-            (10 +
-                Math.random() * 25) +
+            10 +
+            Math.random() *
+            25 +
             "px";
+
 
         heart.style.color =
             "#ff4da6";
 
+
         heart.style.pointerEvents =
             "none";
+
 
         heart.style.zIndex =
             "9999";
@@ -624,7 +689,8 @@ function createHearts() {
 
         const duration =
             2500 +
-            Math.random() * 3500;
+            Math.random() *
+            3500;
 
 
         heart.animate(
@@ -647,21 +713,22 @@ function createHearts() {
             ],
 
             {
-                duration: duration,
+                duration,
 
-                easing: "ease-out"
+                easing:
+                    "ease-out"
             }
-
         );
 
 
         setTimeout(
-            () => heart.remove(),
+            () => {
+                heart.remove();
+            },
             duration
         );
 
     }
-
 }
 
 
@@ -673,35 +740,50 @@ function createSmallHearts() {
 
     for (
         let i = 0;
-        i < 15;
+        i < 20;
         i++
     ) {
 
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        heart.textContent = "♥";
+
+        heart.innerHTML =
+            "♥";
+
 
         heart.style.position =
             "fixed";
 
+
         heart.style.left =
-            Math.random() * 100 + "vw";
+            Math.random() *
+            100 +
+            "vw";
+
 
         heart.style.top =
-            Math.random() * 100 + "vh";
+            Math.random() *
+            100 +
+            "vh";
+
 
         heart.style.color =
             "#ff4da6";
 
+
         heart.style.fontSize =
             "20px";
+
 
         heart.style.pointerEvents =
             "none";
 
+
         heart.style.zIndex =
-            "999";
+            "9999";
 
 
         document.body.appendChild(
@@ -714,7 +796,7 @@ function createSmallHearts() {
             [
                 {
                     transform:
-                        "scale(.3)",
+                        "scale(.2)",
 
                     opacity: 0
                 },
@@ -728,7 +810,7 @@ function createSmallHearts() {
 
                 {
                     transform:
-                        "scale(.5)",
+                        "scale(.2)",
 
                     opacity: 0
                 }
@@ -737,15 +819,15 @@ function createSmallHearts() {
             {
                 duration: 1200
             }
-
         );
 
 
         setTimeout(
-            () => heart.remove(),
+            () => {
+                heart.remove();
+            },
             1200
         );
 
     }
-
 }

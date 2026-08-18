@@ -4,18 +4,21 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
+
     min-height: 100vh;
 
     background:
         radial-gradient(
             circle at top,
-            #30103d,
-            #08000d 55%,
+            #35113f,
+            #09000e 55%,
             #020205
         );
 
@@ -30,11 +33,10 @@ body {
 }
 
 
-/* =========================
-   STARS
-========================= */
+/* ================= STARS ================= */
 
 .stars {
+
     position: fixed;
 
     inset: 0;
@@ -52,8 +54,10 @@ body {
 
     background-size: 70px 70px;
 
-    animation: starsMove 15s linear infinite;
+    animation:
+        starsMove 15s linear infinite;
 }
+
 
 @keyframes starsMove {
 
@@ -64,12 +68,11 @@ body {
     to {
         transform: translateY(70px);
     }
+
 }
 
 
-/* =========================
-   GENERAL
-========================= */
+/* ================= GENERAL ================= */
 
 .screen,
 .section {
@@ -126,6 +129,7 @@ button {
     transition: .3s;
 }
 
+
 button:hover {
 
     transform:
@@ -137,9 +141,7 @@ button:hover {
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero-content {
 
@@ -163,16 +165,16 @@ button:hover {
 .hero-content h1 {
 
     font-size:
-        clamp(70px, 15vw, 150px);
+        clamp(70px,15vw,150px);
 
     letter-spacing: 15px;
 
     background:
         linear-gradient(
             90deg,
-            #fff,
+            white,
             #ff8bdc,
-            #fff
+            white
         );
 
     -webkit-background-clip: text;
@@ -209,9 +211,7 @@ button:hover {
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= TITLES ================= */
 
 .section-label {
 
@@ -228,11 +228,13 @@ button:hover {
 .section h2 {
 
     font-size:
-        clamp(35px, 7vw, 60px);
+        clamp(35px,7vw,60px);
 
     margin-bottom: 25px;
 }
 
+
+/* ================= STORY ================= */
 
 .intro {
 
@@ -243,10 +245,6 @@ button:hover {
     margin-bottom: 60px;
 }
 
-
-/* =========================
-   TIMELINE
-========================= */
 
 .timeline {
 
@@ -365,9 +363,7 @@ button:hover {
 }
 
 
-/* =========================
-   LETTER
-========================= */
+/* ================= LETTER ================= */
 
 .letter-hint {
 
@@ -389,6 +385,8 @@ button:hover {
         80px auto 30px;
 
     cursor: pointer;
+
+    z-index: 10;
 
     flex-shrink: 0;
 }
@@ -421,8 +419,6 @@ button:hover {
 
     min-height: 190px;
 
-    height: auto;
-
     background: #fff5fa;
 
     color: #351526;
@@ -433,9 +429,12 @@ button:hover {
 
     z-index: 2;
 
-    transition: .8s;
+    transition:
+        transform .9s ease;
 
     text-align: right;
+
+    overflow: visible;
 }
 
 
@@ -454,7 +453,6 @@ button:hover {
     font-size: 14px;
 
     white-space: normal;
-
 }
 
 
@@ -480,12 +478,14 @@ button:hover {
         120px solid #9e2166;
 
     z-index: 3;
+
+    pointer-events: none;
 }
 
 
 .envelope.open {
 
-    margin-bottom: 160px;
+    margin-bottom: 220px;
 }
 
 
@@ -493,15 +493,13 @@ button:hover {
 .letter-paper {
 
     transform:
-        translateY(-150px);
+        translateY(-170px);
 
     z-index: 5;
 }
 
 
-/* =========================
-   LETTER NEXT
-========================= */
+/* ================= LETTER NEXT ================= */
 
 .next-area {
 
@@ -533,9 +531,7 @@ button:hover {
 }
 
 
-/* =========================
-   PUZZLE
-========================= */
+/* ================= PUZZLE ================= */
 
 .puzzle-description {
 
@@ -547,7 +543,7 @@ button:hover {
 }
 
 
-.puzzle-wrapper {
+.puzzle-container {
 
     padding: 12px;
 
@@ -564,18 +560,18 @@ button:hover {
 .puzzle-board {
 
     width:
-        min(84vw, 420px);
+        min(84vw,420px);
 
     height:
-        min(84vw, 420px);
+        min(84vw,420px);
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     grid-template-rows:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 4px;
 
@@ -591,24 +587,23 @@ button:hover {
 
 .puzzle-piece {
 
-    position: relative;
-
     border-radius: 8px;
 
     cursor: pointer;
-
-    overflow: hidden;
 
     transition:
         transform .2s,
         filter .2s;
 
-    background:
+    background-image:
         linear-gradient(
             135deg,
             #ff3f9f,
-            #7c28a8
+            #6c24a0
         );
+
+    background-size:
+        300% 300%;
 }
 
 
@@ -622,82 +617,26 @@ button:hover {
 
 .puzzle-piece.selected {
 
-    transform: scale(.93);
+    transform: scale(.92);
 
-    filter:
-        brightness(1.5);
+    filter: brightness(1.5);
 
     box-shadow:
         inset 0 0 0 4px white;
 }
 
 
-.puzzle-piece::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.18),
-            transparent
-        );
-}
-
-
-/*
-    تصویر پازل با CSS ساخته شده.
-    بعداً می‌توانیم عکس واقعی شما را
-    جایگزین کنیم.
-*/
-
-.puzzle-piece {
-
-    background-image:
-        radial-gradient(
-            circle at 50% 45%,
-            #ffb4df 0 12%,
-            transparent 13%
-        ),
-        radial-gradient(
-            circle at 30% 35%,
-            #ff4da6 0 8%,
-            transparent 9%
-        ),
-        radial-gradient(
-            circle at 70% 65%,
-            #8e3fff 0 15%,
-            transparent 16%
-        ),
-        linear-gradient(
-            135deg,
-            #4a145c,
-            #ff3f9f,
-            #5c1c88
-        );
-
-    background-size:
-        100% 100%;
-}
-
-
 .puzzle-status {
+
+    min-height: 30px;
 
     margin-top: 25px;
 
     color: #ff91c8;
-
-    min-height: 25px;
 }
 
 
-/* =========================
-   GIFT
-========================= */
+/* ================= GIFT ================= */
 
 .surprise-container {
 
@@ -795,9 +734,7 @@ button:hover {
 }
 
 
-/* =========================
-   FINAL
-========================= */
+/* ================= FINAL ================= */
 
 #final {
 
@@ -839,6 +776,8 @@ button:hover {
     font-size: 25px;
 
     font-weight: normal;
+
+    line-height: 1.8;
 }
 
 
@@ -860,13 +799,12 @@ button:hover {
 }
 
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ================= ANIMATIONS ================= */
 
 @keyframes heartbeat {
 
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
 
@@ -878,7 +816,8 @@ button:hover {
 
 @keyframes floating {
 
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -891,6 +830,7 @@ button:hover {
 @keyframes fadeUp {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -898,6 +838,7 @@ button:hover {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -906,30 +847,32 @@ button:hover {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
 
     .section {
+
         padding:
             70px 15px;
     }
 
 
     .timeline::before {
+
         right: 20px;
     }
 
 
     .timeline-item {
+
         justify-content:
             flex-start;
     }
 
 
     .timeline-dot {
+
         right: 12px;
     }
 
@@ -964,7 +907,7 @@ button:hover {
     .envelope.open {
 
         margin-bottom:
-            170px;
+            240px;
     }
 
 
@@ -987,7 +930,6 @@ button:hover {
     .final-content h2 {
 
         font-size: 20px;
-
-        line-height: 1.8;
     }
+
 }
