@@ -29,9 +29,6 @@ body {
     overflow-x: hidden;
 }
 
-
-/* ================= STARS ================= */
-
 .stars {
     position: fixed;
     inset: 0;
@@ -62,9 +59,6 @@ body {
         transform: translateY(70px);
     }
 }
-
-
-/* ================= GENERAL ================= */
 
 .screen,
 .section {
@@ -127,19 +121,16 @@ button:hover {
 }
 
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero-content {
     text-align: center;
-
     animation: fadeUp 2s ease;
 }
 
 .small-text {
     color: #d7b7df;
-
     font-size: 16px;
-
     margin-bottom: 25px;
 }
 
@@ -184,7 +175,7 @@ button:hover {
 }
 
 
-/* ================= TITLES ================= */
+/* TITLES */
 
 .section-label {
     color: #ff65b4;
@@ -204,7 +195,7 @@ button:hover {
 }
 
 
-/* ================= STORY ================= */
+/* STORY */
 
 .intro {
     color: #cdbbd0;
@@ -216,9 +207,7 @@ button:hover {
 
 .timeline {
     width: 100%;
-
     max-width: 700px;
-
     position: relative;
 }
 
@@ -295,7 +284,6 @@ button:hover {
 
 .memory span {
     color: #ff70b8;
-
     font-size: 12px;
 }
 
@@ -305,7 +293,6 @@ button:hover {
 
 .memory p {
     color: #bdaebe;
-
     line-height: 1.9;
 }
 
@@ -314,17 +301,15 @@ button:hover {
 }
 
 
-/* ================= LETTER ================= */
+/* LETTER */
 
 .letter-hint {
     color: #bca8be;
-
     margin-bottom: 20px;
 }
 
 .envelope {
     width: 320px;
-
     height: 220px;
 
     position: relative;
@@ -380,13 +365,11 @@ button:hover {
 
 .letter-paper h3 {
     margin-bottom: 15px;
-
     color: #7b164e;
 }
 
 .letter-paper p {
     line-height: 2;
-
     font-size: 14px;
 }
 
@@ -424,9 +407,6 @@ button:hover {
     z-index: 5;
 }
 
-
-/* ================= LETTER NEXT ================= */
-
 .next-area {
     width: 100%;
 
@@ -454,9 +434,9 @@ button:hover {
 }
 
 
-/* =====================================================
+/* ==================================================
    PUZZLE
-===================================================== */
+================================================== */
 
 .puzzle-description {
     color: #cbb7ca;
@@ -467,32 +447,37 @@ button:hover {
 }
 
 .puzzle-wrapper {
-    padding: 12px;
+    padding: 10px;
 
     border-radius: 25px;
 
     background:
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.07);
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,.5);
+        0 25px 80px rgba(0,0,0,.6);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid rgba(255,255,255,.1);
 }
 
 
 /*
-    خود صفحه پازل
+    عکس جدید
+
+    عکس یک زوج با چهره‌های واضح
+    و پس‌زمینه متفاوت است.
+
+    برای پازل مناسب‌تر از عکس قبلی است.
 */
 
 .puzzle-board {
 
     width:
-        min(90vw, 450px);
+        min(88vw, 480px);
 
     height:
-        min(90vw, 450px);
+        min(88vw, 480px);
 
     display: grid;
 
@@ -502,12 +487,11 @@ button:hover {
     grid-template-rows:
         repeat(3, 1fr);
 
-    gap: 5px;
+    gap: 4px;
 
-    background:
-        #050308;
+    background: #080509;
 
-    padding: 5px;
+    padding: 4px;
 
     border-radius: 18px;
 
@@ -527,27 +511,37 @@ button:hover {
 
     height: 100%;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
     cursor: pointer;
 
     overflow: hidden;
 
+    /*
+        عکس واقعی
+    */
+
     background-image:
-        url("https://images.unsplash.com/photo-1620537327385-c3c078055f73?auto=format&fit=crop&w=1200&q=85");
+        url("https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1200&q=90");
 
     background-repeat: no-repeat;
+
+    /*
+        بسیار مهم:
+
+        اندازه کل عکس را طوری تنظیم می‌کنیم
+        که هر 3x3 قطعه دقیقاً یک تصویر مشترک
+        بسازند.
+    */
+
+    background-size:
+        300% 300%;
 
     transition:
         transform .2s ease,
         filter .2s ease,
         box-shadow .2s ease;
 }
-
-
-/*
-    افکت هنگام قرار گرفتن موس
-*/
 
 .puzzle-piece:hover {
 
@@ -558,42 +552,33 @@ button:hover {
         brightness(1.15);
 }
 
-
-/*
-    قطعه انتخاب شده
-*/
-
 .puzzle-piece.selected {
 
     transform:
         scale(.93);
 
     filter:
-        brightness(1.4);
+        brightness(1.35);
 
     box-shadow:
         inset 0 0 0 4px white,
-        0 0 25px #ff4da6;
+        0 0 30px #ff4da6;
 
     z-index: 5;
 }
 
-
-/*
-    بعد از حل پازل
-*/
-
 .puzzle-piece.solved {
-
-    box-shadow:
-        inset 0 0 0 2px rgba(255,255,255,.5);
 
     cursor:
         default;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255,255,255,.4);
 }
 
 
-/* ================= PUZZLE STATUS ================= */
+/* STATUS */
 
 .puzzle-status {
 
@@ -607,7 +592,7 @@ button:hover {
 }
 
 
-/* ================= GIFT ================= */
+/* GIFT */
 
 .surprise-container {
     display: flex;
@@ -619,7 +604,6 @@ button:hover {
 
 .gift {
     width: 180px;
-
     height: 180px;
 
     position: relative;
@@ -636,7 +620,6 @@ button:hover {
     position: absolute;
 
     width: 180px;
-
     height: 130px;
 
     bottom: 0;
@@ -655,11 +638,9 @@ button:hover {
     position: absolute;
 
     width: 195px;
-
     height: 40px;
 
     top: 25px;
-
     left: -7px;
 
     background: #ff4c9b;
@@ -673,11 +654,9 @@ button:hover {
     position: absolute;
 
     width: 35px;
-
     height: 155px;
 
     left: 72px;
-
     top: 15px;
 
     background: #ffd5e9;
@@ -694,7 +673,7 @@ button:hover {
 }
 
 
-/* ================= FINAL ================= */
+/* FINAL */
 
 #final {
     background:
@@ -735,7 +714,6 @@ button:hover {
 
 .final-content p {
     color: #c5afc4;
-
     margin-top: 20px;
 }
 
@@ -748,12 +726,11 @@ button:hover {
 }
 
 
-/* ================= ANIMATIONS ================= */
+/* ANIMATIONS */
 
 @keyframes heartbeat {
 
-    0%,
-    100% {
+    0%, 100% {
         transform: scale(1);
     }
 
@@ -764,8 +741,7 @@ button:hover {
 
 @keyframes floating {
 
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -778,21 +754,19 @@ button:hover {
 
     from {
         opacity: 0;
-
         transform:
             translateY(30px);
     }
 
     to {
         opacity: 1;
-
         transform:
             translateY(0);
     }
 }
 
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
